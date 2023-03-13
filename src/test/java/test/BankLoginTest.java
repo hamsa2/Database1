@@ -7,6 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import page.LoginPage;
 
+import static com.codeborne.selenide.Selenide.open;
+import static data.SQLHelper.*;
 import static data.SQLHelper.cleanDatabase;
 
 
@@ -23,7 +25,8 @@ public class BankLoginTest {
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.verifyVerificationPageVisiblity();
-        var verificationCode = SQLHelper.getVerificationCode();
+        var verificationCode =
+                getVerificationCode();
         verificationPage.validVerify(verificationCode.getCode());
 
     }

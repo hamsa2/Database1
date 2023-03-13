@@ -36,6 +36,7 @@ public static VerificationCode generateRandomVerificationCode() {
         String login;
         String password;
 
+
     }
     @Value
     public static class VerificationCode {
